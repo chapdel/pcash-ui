@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pcash_ui/config.dart';
+import 'package:pcash_ui/widgets/cash/home.dart';
 import 'package:pcash_ui/widgets/home.dart';
 
 void main() {
@@ -48,7 +49,7 @@ class _AppState extends State<App> {
       ],),),
       body: TabBarView(children: [
         HomeScreen(),
-        Text('cash'),
+        CashHomeScreen(),
         Text('paiements'),
       ],),
       bottomNavigationBar: BottomNavigationBar(items: [
