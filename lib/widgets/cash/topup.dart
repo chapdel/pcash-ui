@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pcash_ui/config.dart';
+import 'package:pcash_ui/widgets/cash/depot.dart';
 import 'package:pcash_ui/widgets/cash/payform.dart';
+import 'package:pcash_ui/widgets/cash/retrait.dart';
 
 class TopUpScreen extends StatefulWidget {
   const TopUpScreen({ Key? key }) : super(key: key);
@@ -44,7 +46,7 @@ class _TopUpScreenState extends State<TopUpScreen> {
                   ],),
                   onTap: () => Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => TopUpFormScreen()),
+                            MaterialPageRoute(builder: (context) => DepotScreen()),
                           ),
                 ),
                 ListTile(
@@ -56,7 +58,7 @@ class _TopUpScreenState extends State<TopUpScreen> {
                   ],),
                   onTap: () => Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => TopUpFormScreen()),
+                            MaterialPageRoute(builder: (context) => RetraitScreen()),
                           ),
                 ),
 
