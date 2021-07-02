@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pcash_ui/config.dart';
+import 'package:pcash_ui/widgets/cash/retrait_confirm.dart';
 
 class RetraitScreen extends StatefulWidget {
   const RetraitScreen({ Key? key }) : super(key: key);
@@ -78,9 +79,9 @@ class _RetraitScreenState extends State<RetraitScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 18.0, horizontal: 12),
             child: ElevatedButton(
-              onPressed: () {
-                
-              },
+              onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => RetraitConfirmScreen())),
               style: ElevatedButton.styleFrom(
             padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
             shape: StadiumBorder()),

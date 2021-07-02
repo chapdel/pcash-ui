@@ -56,10 +56,7 @@ class _TopUpScreenState extends State<TopUpScreen> {
                     Text("Carte de crédit / débit"),
                     Container(child: Image.asset("assets/images/cardpayment.png", height: 42,)),
                   ],),
-                  onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => RetraitScreen()),
-                          ),
+                  onTap: () => {},
                 ),
 
               ],

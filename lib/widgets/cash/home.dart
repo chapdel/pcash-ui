@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pcash_ui/widgets/cash/retrait.dart';
 import 'package:pcash_ui/widgets/cash/topup.dart';
 
 class CashHomeScreen extends StatefulWidget {
@@ -23,6 +24,10 @@ class _CashHomeScreenState extends State<CashHomeScreen> {
                           ),
           ),
           ListTile(
+            onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => RetraitScreen()),
+                          ),
             leading: Icon(Icons.money_off_csred),
             title: Text("Retrait"),
           ),
