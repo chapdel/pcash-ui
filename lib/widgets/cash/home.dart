@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pcash_ui/widgets/cash/topup.dart';
 
 class CashHomeScreen extends StatefulWidget {
   const CashHomeScreen({ Key? key }) : super(key: key);
@@ -16,6 +17,10 @@ class _CashHomeScreenState extends State<CashHomeScreen> {
           ListTile(
             leading: Icon(Icons.attach_money),
             title: Text("Dépot P-Cash"),
+            onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => TopUpScreen()),
+                          ),
           ),
           ListTile(
             leading: Icon(Icons.money_off_csred),
