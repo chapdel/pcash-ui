@@ -14,7 +14,8 @@ class _TopUpScreenState extends State<TopUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.close),
+        leading: Icon(Icons.close, color: Colors.black),
+        backgroundColor: Colors.white,
       ),
       body: SingleChildScrollView(child: Column(
         children: [
