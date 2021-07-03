@@ -5,6 +5,7 @@ import 'package:pcash_ui/views/verification.dart';
 import 'package:pcash_ui/widgets/home.dart';
 import 'package:pcash_ui/views/qrcodeview.dart';
 import 'package:pcash_ui/widgets/notifications.dart';
+import 'package:pcash_ui/widgets/seetings/home.dart';
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({Key? key}) : super(key: key);
@@ -29,7 +30,12 @@ class _HomePageScreenState extends State<HomePageScreen> {
                     }),
                     ),),
                 SizedBox(width: 12,),
-                InkWell(child: Icon(Icons.settings), onTap: () => {},),
+                InkWell(child: Icon(Icons.settings), onTap: () =>  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                        return SettingsHomeScreen();
+                    }),
+                    ),),
               ],
               bottom: TabBar(
                 tabs: [
