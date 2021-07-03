@@ -22,7 +22,38 @@ class _SettingsHomeScreenState extends State<SettingsHomeScreen> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: [],
+          children: [
+            ListTile(
+              leading: Icon(Icons.book),
+              title: Text("Termes, conditions d'utilisations et confidentialités")
+            ),
+            ListTile(
+              leading: Icon(Icons.phone_callback),
+              title: Text("Changer de numéro")
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Modifer ou completer son compte")
+            ),
+            ListTile(
+              leading: Icon(Icons.print),
+              title: Text("Imprimer le QR-Code")
+            ),
+            ListTile(
+              leading: Icon(Icons.language),
+              title: Text("Langues")
+            ),
+            ListTile(
+              leading: Icon(Icons.person_add),
+              title: Text("Inviter un(e) ami(e)")
+            ),
+            SizedBox(height: 12,),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.delete),
+              title: Text("Supprimer le compte")
+            ),
+          ],
         ),
       )
     );
