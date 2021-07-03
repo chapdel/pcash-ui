@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pcash_ui/widgets/seetings/language_setting.dart';
 
 class SettingsHomeScreen extends StatefulWidget {
   const SettingsHomeScreen({ Key? key }) : super(key: key);
@@ -41,7 +42,13 @@ class _SettingsHomeScreenState extends State<SettingsHomeScreen> {
             ),
             ListTile(
               leading: Icon(Icons.language),
-              title: Text("Langues")
+              title: Text("Langues"),
+              onTap: () =>  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                        return LanguageSettingScreen();
+                    }),
+                    ),
             ),
             ListTile(
               leading: Icon(Icons.person_add),
