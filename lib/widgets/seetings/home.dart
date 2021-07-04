@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pcash_ui/views/change_number.dart';
+import 'package:pcash_ui/views/delete_account.dart';
 import 'package:pcash_ui/widgets/seetings/language_setting.dart';
 
 class SettingsHomeScreen extends StatefulWidget {
@@ -30,7 +32,14 @@ class _SettingsHomeScreenState extends State<SettingsHomeScreen> {
             ),
             ListTile(
               leading: Icon(Icons.phone_callback),
-              title: Text("Changer de numéro")
+              title: Text("Changer de numéro"),
+              onTap: () =>  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                        return ChangeNumberScreen();
+                    }),
+                    ),
+
             ),
             ListTile(
               leading: Icon(Icons.person),
@@ -58,7 +67,13 @@ class _SettingsHomeScreenState extends State<SettingsHomeScreen> {
             Divider(),
             ListTile(
               leading: Icon(Icons.delete),
-              title: Text("Supprimer le compte")
+              title: Text("Supprimer le compte"),
+              onTap: () =>  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                        return MyAccountScreen();
+                    }),
+              ),
             ),
           ],
         ),
