@@ -15,6 +15,7 @@ class HomePageScreen extends StatefulWidget {
 }
 
 class _HomePageScreenState extends State<HomePageScreen> {
+  int _value = 1;
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -23,19 +24,27 @@ class _HomePageScreenState extends State<HomePageScreen> {
             appBar: AppBar(
               title: Text("P-Cash"),
               actions: [
-                InkWell(child: Icon(Icons.notifications), onTap: () =>  Navigator.push(
+
+                PopupMenuButton<String>(itemBuilder: (context) => [
+                  PopupMenuItem(child: Text("Notifications"), value: "notifications"),
+                  PopupMenuItem(child: Text("Settings"), value: "settings"),
+                ], onSelected: (item) => SelectedItem(context, item),),
+                
+                    /* DropdownButton(
+                      icon: Icon(Icons.more_vert),
+                       value: _value,
+                      items: [
+                      PopupMenuItem(child: Text("Notifications"),onTap: () =>  Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) {
                         return NotificationsScreen();
-                    }),
-                    ),),
-                SizedBox(width: 12,),
-                InkWell(child: Icon(Icons.settings), onTap: () =>  Navigator.push(
+                    }))),
+                    PopupMenuItem(child: Text("Notifications"),onTap: () =>  Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) {
                         return SettingsHomeScreen();
-                    }),
-                    ),),
+                    })))
+                    ]) */
               ],
               bottom: TabBar(
                 tabs: [
@@ -63,25 +72,20 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 QRCodeScreen(),
               ],
             ),
-            /* bottomNavigationBar: BottomNavigationBar(items: [
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.person), label: "Accueil"),
-              BottomNavigationBarItem(icon: Icon(Icons.list), label: "List"),
-              BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.notifications,
-                  ),
-                  label: "Notifications")
-            ]) */
             )
             );
   }
 
-  List<Widget> _screens = [
-    Text("Account"),
-    Text("home"),
-    Text("notifications"),
-  ];
-
-  int _currentScreen = 1;
+  void SelectedItem(BuildContext context, item) {
+    switch (item) {
+      case "settings":
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => SettingsHomeScreen()));
+        break;
+      case "notifications":
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => NotificationsScreen()));
+        break;
+    }
+  }
 }
